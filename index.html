@@ -36,7 +36,7 @@
   "@type": "MedicalBusiness",
   "name": "Cabinet paramédical Samuel Queniart — Cryothérapie Corps Entier",
   "description": "Cryothérapie corps entier à Noisiel. Récupération, anti-douleur, bien-être. 1re séance offerte.",
-  "url": "",
+  "url": "https://cryotherapie-noisiel.fr",
   "telephone": "+33608774286",
   "address": {
     "@type": "PostalAddress",
@@ -59,6 +59,46 @@
   },
   "image": "image5.webp",
   "sameAs": []
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "La cryothérapie corps entier est-elle douloureuse ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non, ce n'est pas douloureux. La sensation de froid est intense mais brève (3 minutes). L'exposition est progressive et ajustée à votre ressenti."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Y a-t-il des contre-indications à la cryothérapie ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui : grossesse, troubles cardiaques sévères, syndrome de Raynaud sévère, allergie au froid. Un bilan est réalisé avant votre première séance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de séances pour voir des résultats ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vous ressentirez un effet dès la première séance. Pour des bénéfices durables, nous recommandons 5 à 10 séances rapprochées."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "La séance découverte est-elle vraiment gratuite ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, totalement gratuite et sans engagement. Aucune carte bancaire demandée, aucun abonnement caché."
+      }
+    }
+  ]
 }
 </script>
 <style>
@@ -1172,6 +1212,291 @@
   }
 
   /* ============================================================
+     SOCIAL PROOF COUNTER
+     ============================================================ */
+  .social-proof {
+    background: linear-gradient(135deg, var(--dark), var(--blue));
+    padding: 60px 24px;
+  }
+  .social-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .social-proof-item {
+    color: var(--white);
+  }
+  .social-proof-number {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 900;
+    color: var(--gold-bright);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .social-proof-label {
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+  }
+
+  /* ============================================================
+     HOW IT WORKS
+     ============================================================ */
+  .how-it-works { background: var(--white); }
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 16%;
+    right: 16%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--ice), var(--gold), var(--ice));
+    z-index: 0;
+  }
+  .step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .step-number {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+    color: var(--dark);
+    font-size: 32px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 20px rgba(200,162,77,0.3);
+  }
+  .step h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .step p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ============================================================
+     FAQ
+     ============================================================ */
+  .faq { background: var(--pale); }
+  .faq-list {
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .faq-item {
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid rgba(184,220,230,0.3);
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+  }
+  .faq-item:hover { box-shadow: 0 4px 20px rgba(9,27,41,0.06); }
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--dark);
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .faq-question svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--gold);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+  }
+  .faq-item.open .faq-question svg { transform: rotate(180deg); }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+  }
+  .faq-item.open .faq-answer {
+    max-height: 300px;
+  }
+  .faq-answer p {
+    padding: 0 24px 20px;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* ============================================================
+     GDPR COOKIE BANNER
+     ============================================================ */
+  .gdpr-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(9,27,41,0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--white);
+    padding: 20px 24px;
+    z-index: 9999;
+    display: none;
+  }
+  .gdpr-banner.show { display: block; }
+  .gdpr-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .gdpr-text {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.6;
+    opacity: 0.9;
+    flex: 1;
+    min-width: 280px;
+  }
+  .gdpr-text a {
+    color: var(--gold-bright);
+    text-decoration: underline;
+  }
+  .gdpr-actions {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  .gdpr-accept {
+    background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+    color: var(--dark);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .gdpr-accept:hover { transform: translateY(-1px); }
+  .gdpr-refuse {
+    background: rgba(255,255,255,0.1);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .gdpr-refuse:hover { background: rgba(255,255,255,0.15); }
+
+  /* ============================================================
+     MENTIONS LEGALES MODAL
+     ============================================================ */
+  .legal-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10001;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .legal-modal.show { display: flex; }
+  .legal-modal-content {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  .legal-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    padding: 4px;
+  }
+  .legal-modal-close svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+  .legal-modal-content h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 24px;
+  }
+  .legal-modal-content h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+  .legal-modal-content p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  /* ============================================================
      RESPONSIVE
      ============================================================ */
   @media (max-width: 1024px) {
@@ -1203,6 +1528,11 @@
 
     .footer-content { flex-direction: column; text-align: center; }
     .footer-phone { text-align: center; }
+    .social-proof-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .steps-grid { grid-template-columns: 1fr; max-width: 360px; gap: 32px; }
+    .steps-grid::before { display: none; }
+    .gdpr-content { flex-direction: column; text-align: center; }
+    .gdpr-actions { justify-content: center; }
   }
 </style>
 </head>
@@ -1221,6 +1551,7 @@
     <li><a href="#bienfaits" data-section="bienfaits">Bienfaits</a></li>
     <li><a href="#experience" data-section="experience">Expérience</a></li>
     <li><a href="#tarifs" data-section="tarifs">Tarifs</a></li>
+    <li><a href="#faq" data-section="faq">FAQ</a></li>
     <li><a href="#contact" data-section="contact">Contact</a></li>
     <li><a href="#contact" class="nav-cta">1re séance offerte</a></li>
   </ul>
@@ -1233,6 +1564,7 @@
   <a href="#bienfaits">Bienfaits</a>
   <a href="#experience">Expérience</a>
   <a href="#tarifs">Tarifs</a>
+  <a href="#faq">FAQ</a>
   <a href="#contact">Contact</a>
   <a href="#contact" class="nav-cta" style="text-align:center;display:block;border-radius:6px;padding:12px;">1re séance offerte</a>
 </div>
@@ -1272,6 +1604,28 @@
       <svg viewBox="0 0 24 24"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
     </span>
     1re séance offerte
+  </div>
+</div>
+
+<!-- ==================== SOCIAL PROOF ==================== -->
+<div class="social-proof">
+  <div class="social-proof-grid">
+    <div class="social-proof-item reveal">
+      <div class="social-proof-number">500+</div>
+      <div class="social-proof-label">Séances réalisées</div>
+    </div>
+    <div class="social-proof-item reveal">
+      <div class="social-proof-number">98%</div>
+      <div class="social-proof-label">Clients satisfaits</div>
+    </div>
+    <div class="social-proof-item reveal">
+      <div class="social-proof-number">-110°C</div>
+      <div class="social-proof-label">Température cabine</div>
+    </div>
+    <div class="social-proof-item reveal">
+      <div class="social-proof-number">3 min</div>
+      <div class="social-proof-label">Durée d'une séance</div>
+    </div>
   </div>
 </div>
 
@@ -1331,6 +1685,38 @@
     <div class="section-cta reveal">
       <a href="#contact">Essayer gratuitement</a>
       <span class="micro-copy">Sans engagement — 1re séance offerte</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== COMMENT CA MARCHE ==================== -->
+<section class="how-it-works" id="comment-ca-marche">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Comment ça marche</div>
+      <h2 class="section-title">3 étapes simples</h2>
+      <p class="section-subtitle">De la prise de rendez-vous au bien-être, tout est fluide et encadré</p>
+    </div>
+    <div class="steps-grid stagger">
+      <div class="step reveal">
+        <div class="step-number">1</div>
+        <h3>Réservez</h3>
+        <p>Prenez rendez-vous via le formulaire ou par téléphone. C'est rapide et sans engagement.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-number">2</div>
+        <h3>Venez tel quel</h3>
+        <p>On vous fournit tout : gants, bonnet, chaussettes, sabots. Vous n'avez rien à prévoir.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-number">3</div>
+        <h3>Profitez</h3>
+        <p>3 minutes dans la cabine, guidé par Samuel. Résultat immédiat : légèreté et énergie.</p>
+      </div>
+    </div>
+    <div class="section-cta reveal">
+      <a href="#contact">C'est parti — je réserve</a>
+      <span class="micro-copy">1re séance offerte · Aucun prérequis</span>
     </div>
   </div>
 </section>
@@ -1495,6 +1881,72 @@
   </div>
 </section>
 
+<!-- ==================== FAQ ==================== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Questions fréquentes</div>
+      <h2 class="section-title">Tout ce que vous devez savoir</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Est-ce douloureux ?
+          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Non, ce n'est pas douloureux. La sensation de froid est intense mais brève (3 minutes). L'exposition est progressive et ajustée à votre ressenti. La plupart des clients décrivent une sensation de picotement suivie d'un profond bien-être dès la sortie.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Y a-t-il des contre-indications ?
+          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Oui, certaines situations sont contre-indiquées : grossesse, troubles cardiaques sévères, syndrome de Raynaud sévère, allergie au froid (urticaire au froid). Un bilan est réalisé avant votre première séance pour garantir votre sécurité. En cas de doute, consultez votre médecin.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Comment dois-je m'habiller ?
+          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Venez comme vous êtes ! Nous fournissons tout le nécessaire : gants, bonnet, chaussettes, sabots et masque de protection. Pendant la séance, vous êtes en sous-vêtements. Rien à prévoir, rien à apporter.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Combien de séances pour voir des résultats ?
+          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Vous ressentirez un effet dès la première séance : regain d'énergie, meilleur sommeil, sensation de légèreté. Pour des bénéfices durables (douleurs chroniques, récupération sportive), nous recommandons un programme de 5 à 10 séances rapprochées.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          La séance découverte est vraiment gratuite ?
+          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Oui, totalement gratuite et sans engagement. Nous voulons que vous puissiez découvrir la cryothérapie dans les meilleures conditions avant de décider. Aucune carte bancaire demandée, aucun abonnement caché.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Quelle est la différence avec un bain de glace ?
+          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>La cryothérapie corps entier utilise un froid sec (air refroidi) et non de l'eau glacée. C'est plus confortable, plus hygiénique et plus efficace : le froid sec pénètre moins la peau mais active plus intensément les mécanismes de récupération du corps. Et ça ne dure que 3 minutes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ==================== CONTACT ==================== -->
 <section class="contact" id="contact">
   <div class="container">
@@ -1515,6 +1967,10 @@
         <div>
           <label for="email">Email</label>
           <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+        </div>
+        <div>
+          <label for="phone">Téléphone</label>
+          <input type="tel" id="phone" name="phone" placeholder="06 00 00 00 00" required>
         </div>
         <div>
           <label for="message">Message</label>
@@ -1590,7 +2046,7 @@
     </div>
   </div>
   <div class="footer-legal">
-    &copy; 2026 Cabinet paramédical Samuel Queniart — Tous droits réservés
+    &copy; 2026 Cabinet paramédical Samuel Queniart — Tous droits réservés · <a href="#" id="openLegal" style="color:rgba(255,255,255,0.5);text-decoration:underline;">Mentions légales</a>
   </div>
 </footer>
 
@@ -1598,6 +2054,49 @@
 <a href="tel:+33608774286" class="floating-cta" aria-label="Appeler">
   <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
 </a>
+
+<!-- ==================== GDPR BANNER ==================== -->
+<div class="gdpr-banner" id="gdprBanner">
+  <div class="gdpr-content">
+    <p class="gdpr-text">
+      Ce site utilise des cookies essentiels au fonctionnement du formulaire de contact et à l'affichage de la carte Google Maps. Aucune donnée n'est utilisée à des fins publicitaires. <a href="#" id="openLegalFromBanner">En savoir plus</a>
+    </p>
+    <div class="gdpr-actions">
+      <button class="gdpr-accept" id="gdprAccept">Accepter</button>
+      <button class="gdpr-refuse" id="gdprRefuse">Refuser</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== MENTIONS LEGALES MODAL ==================== -->
+<div class="legal-modal" id="legalModal">
+  <div class="legal-modal-content">
+    <button class="legal-modal-close" id="closeLegal" aria-label="Fermer">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <h2>Mentions légales</h2>
+
+    <h3>Éditeur du site</h3>
+    <p>Cabinet paramédical Samuel Queniart<br>
+    15 cours du Luzard, 77186 Noisiel<br>
+    Téléphone : 06.08.77.42.86<br>
+    Professionnel de santé — Diplômé d'État</p>
+
+    <h3>Hébergement</h3>
+    <p>Ce site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis.</p>
+
+    <h3>Propriété intellectuelle</h3>
+    <p>L'ensemble du contenu de ce site (textes, images, logos) est la propriété exclusive du Cabinet paramédical Samuel Queniart. Toute reproduction est interdite sans autorisation préalable.</p>
+
+    <h3>Protection des données personnelles (RGPD)</h3>
+    <p>Les données collectées via le formulaire de contact (nom, email, téléphone, message) sont uniquement utilisées pour répondre à votre demande de rendez-vous. Elles ne sont ni vendues, ni partagées avec des tiers.</p>
+    <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits, contactez-nous par téléphone ou via le formulaire du site.</p>
+    <p>Le formulaire est traité par le service Web3Forms. La carte est fournie par Google Maps. Aucun cookie publicitaire ou de suivi n'est utilisé.</p>
+
+    <h3>Responsabilité</h3>
+    <p>Les informations fournies sur ce site sont à titre indicatif. La cryothérapie ne se substitue pas à un avis médical. Consultez votre médecin en cas de doute sur les contre-indications.</p>
+  </div>
+</div>
 
 <!-- ==================== JAVASCRIPT ==================== -->
 <script>
@@ -1654,6 +2153,52 @@
   }
   window.addEventListener('scroll', updateActiveNav);
   updateActiveNav();
+
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      // Close all others
+      document.querySelectorAll('.faq-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // GDPR banner
+  const gdprBanner = document.getElementById('gdprBanner');
+  if (!localStorage.getItem('gdpr-consent')) {
+    gdprBanner.classList.add('show');
+  }
+  document.getElementById('gdprAccept').addEventListener('click', () => {
+    localStorage.setItem('gdpr-consent', 'accepted');
+    gdprBanner.classList.remove('show');
+  });
+  document.getElementById('gdprRefuse').addEventListener('click', () => {
+    localStorage.setItem('gdpr-consent', 'refused');
+    gdprBanner.classList.remove('show');
+  });
+
+  // Legal modal
+  const legalModal = document.getElementById('legalModal');
+  function openLegal(e) {
+    e.preventDefault();
+    legalModal.classList.add('show');
+  }
+  document.getElementById('openLegal').addEventListener('click', openLegal);
+  document.getElementById('openLegalFromBanner').addEventListener('click', openLegal);
+  document.getElementById('closeLegal').addEventListener('click', () => {
+    legalModal.classList.remove('show');
+  });
+  legalModal.addEventListener('click', (e) => {
+    if (e.target === legalModal) legalModal.classList.remove('show');
+  });
 
   // Form submission with success state
   const form = document.querySelector('.contact-form');
