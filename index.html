@@ -810,6 +810,26 @@
     border-color: var(--blue-mid);
   }
   .contact-form textarea { resize: vertical; min-height: 120px; }
+  .contact-form label.consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--text-subtle);
+    line-height: 1.5;
+    cursor: pointer;
+  }
+  .consent-label input[type="checkbox"] {
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  .consent-label a {
+    color: var(--blue-mid);
+    text-decoration: underline;
+  }
   .contact-submit {
     background: linear-gradient(135deg, var(--dark), var(--blue));
     color: var(--white);
@@ -1624,7 +1644,7 @@
     <span class="trust-badge-icon">
       <svg viewBox="0 0 24 24"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
     </span>
-    1re séance offerte
+    Cabinet à Noisiel (77)
   </div>
 </div>
 
@@ -1683,7 +1703,7 @@
     </div>
     <div class="section-cta reveal">
       <a href="#contact">Essayer gratuitement</a>
-      <span class="micro-copy">Sans engagement — 1re séance offerte</span>
+      <span class="micro-copy">Sans engagement · Encadré par un professionnel</span>
     </div>
     <p class="reveal" style="text-align:center;font-size:11px;color:var(--text-subtle);margin-top:24px;line-height:1.5;max-width:600px;margin-left:auto;margin-right:auto;">La cryothérapie corps entier est une pratique de bien-être. Elle ne se substitue pas à un avis ou un traitement médical. Consultez votre médecin en cas de doute.</p>
   </div>
@@ -1716,7 +1736,7 @@
     </div>
     <div class="section-cta reveal">
       <a href="#contact">C'est parti — je réserve</a>
-      <span class="micro-copy">1re séance offerte · Aucun prérequis</span>
+      <span class="micro-copy">Aucun prérequis · Venez comme vous êtes</span>
     </div>
   </div>
 </section>
@@ -1822,7 +1842,7 @@
     </div>
     <div class="section-cta reveal">
       <a href="#contact">Réserver ma séance découverte</a>
-      <span class="micro-copy">Gratuit · Sans engagement · Encadré par un professionnel</span>
+      <span class="micro-copy">Sans engagement · Sur rendez-vous</span>
     </div>
   </div>
 </section>
@@ -1856,7 +1876,7 @@
     <div class="section-header reveal">
       <div class="section-label">Nos formules</div>
       <h2 class="section-title">Des formules simples, sans surprise</h2>
-      <p class="section-subtitle">Choisissez la formule qui vous convient — la première séance est toujours offerte</p>
+      <p class="section-subtitle">Choisissez la formule qui vous convient</p>
     </div>
     <div class="tarifs-grid stagger">
       <div class="tarif-card tarif-decouverte reveal">
@@ -1954,7 +1974,7 @@
     <div class="section-header reveal">
       <div class="section-label">Contact</div>
       <h2 class="section-title">Votre première séance vous attend</h2>
-      <p class="section-subtitle">Offerte, sans engagement — réservez en 30 secondes</p>
+      <p class="section-subtitle">Réservez en 30 secondes, sans engagement</p>
     </div>
     <div class="contact-grid">
 
@@ -1977,14 +1997,14 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="Je souhaite réserver une séance découverte..."></textarea>
         </div>
-        <div style="display:flex;align-items:flex-start;gap:8px;">
-          <input type="checkbox" id="consent" name="consent" required style="margin-top:3px;flex-shrink:0;">
-          <label for="consent" style="font-size:12px;font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-subtle);line-height:1.5;">J'accepte que mes données soient utilisées pour répondre à ma demande. <a href="#" class="footer-legal-link" onclick="document.getElementById('legalModal').classList.add('show');return false;" style="color:var(--blue-mid);">Politique de confidentialité</a></label>
-        </div>
+        <label class="consent-label">
+          <input type="checkbox" id="consent" name="consent" required>
+          <span>J'accepte que mes données soient utilisées pour répondre à ma demande. <a href="#" onclick="document.getElementById('legalModal').classList.add('show');return false;">Politique de confidentialité</a></span>
+        </label>
         <button type="submit" class="contact-submit">Envoyer ma demande</button>
         <span class="micro-copy" style="text-align:center">Réponse sous 24h · Sans engagement</span>
       </form>
-      <div class="form-success" id="formSuccess">
+      <div class="form-success" id="formSuccess" style="grid-column:1;">
         <div class="form-success-icon">
           <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
@@ -1992,7 +2012,7 @@
         <p>Merci ! Samuel vous recontactera sous 24h pour planifier votre séance découverte gratuite.</p>
       </div>
 
-      <div class="contact-info reveal">
+      <div class="contact-info reveal" style="grid-row:1/3;grid-column:2;">
         <div class="contact-item">
           <div class="contact-item-icon">
             <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
