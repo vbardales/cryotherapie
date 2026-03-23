@@ -2,14 +2,17 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cryothérapie Corps Entier — Cabinet Samuel Queniart | Noisiel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Cryothérapie Corps Entier — Cabinet Samuel Queniart, Noisiel</title>
 <meta name="description" content="Cryothérapie corps entier à Noisiel (77). Votre 1re séance est offerte. Récupération, anti-douleur, sommeil, énergie — résultats dès la première séance. Cabinet paramédical Samuel Queniart, professionnel de santé diplômé.">
+<link rel="canonical" href="https://cryotherapie-noisiel.fr">
+<link rel="alternate" hreflang="fr" href="https://cryotherapie-noisiel.fr">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Cryothérapie Corps Entier — 1re séance offerte | Noisiel">
 <meta property="og:description" content="Réveillez le pouvoir de votre corps. Récupération, bien-être, anti-douleur — résultats dès la 1re séance. Cabinet paramédical Samuel Queniart.">
-<meta property="og:image" content="image5.webp">
+<meta property="og:image" content="https://cryotherapie-noisiel.fr/image5.webp">
+<meta property="og:url" content="https://cryotherapie-noisiel.fr">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 
@@ -17,10 +20,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Cryothérapie Corps Entier — 1re séance offerte">
 <meta name="twitter:description" content="Réveillez le pouvoir de votre corps. Résultats dès la 1re séance. Cabinet paramédical à Noisiel.">
-<meta name="twitter:image" content="image5.webp">
+<meta name="twitter:image" content="https://cryotherapie-noisiel.fr/image5.webp">
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" href="logo_C_final.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
 <!-- Preload hero image for LCP -->
 <link rel="preload" as="image" href="image2.webp" type="image/webp">
@@ -51,14 +55,21 @@
     "longitude": 2.6182
   },
   "priceRange": "€",
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-    "opens": "09:00",
-    "closes": "19:00"
-  },
-  "image": "image5.webp",
-  "sameAs": []
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "00:00"
+    }
+  ],
+  "image": "https://cryotherapie-noisiel.fr/image5.webp"
 }
 </script>
 <script type="application/ld+json">
@@ -132,8 +143,7 @@
     overflow-x: hidden;
   }
 
-  /* Secondary font for quotes */
-  .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+  /* Secondary font for quotes — applied directly on .testimonial-card blockquote */
 
   /* ============================================================
      SVG ICON SYSTEM
@@ -281,21 +291,21 @@
     border-radius: 1px;
   }
 
-  .nav-cta {
+  .nav-links a.nav-cta {
     background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-    color: var(--dark) !important;
+    color: var(--dark);
     padding: 10px 20px;
     border-radius: 6px;
-    font-weight: 700 !important;
-    font-size: 12px !important;
-    letter-spacing: 0.5px !important;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.5px;
     transition: transform 0.3s, box-shadow 0.3s;
   }
-  .nav-cta::after { display: none !important; }
-  .nav-cta:hover {
+  .nav-links a.nav-cta::after { display: none; }
+  .nav-links a.nav-cta:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(200,162,77,0.4);
-    color: var(--dark) !important;
+    color: var(--dark);
   }
 
   /* Hamburger */
@@ -341,6 +351,12 @@
     font-weight: 500;
     padding: 8px 0;
     border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-mobile-cta {
+    text-align: center;
+    display: block;
+    border-radius: 6px;
+    padding: 12px;
   }
 
   /* ============================================================
@@ -933,6 +949,11 @@
     margin-left: auto;
     margin-right: auto;
   }
+  .footer-legal-link {
+    color: rgba(255,255,255,0.5);
+    text-decoration: underline;
+  }
+  .footer-legal-link:hover { color: var(--gold-bright); }
 
   /* ============================================================
      PROMO BANNER
@@ -1566,7 +1587,7 @@
   <a href="#tarifs">Tarifs</a>
   <a href="#faq">FAQ</a>
   <a href="#contact">Contact</a>
-  <a href="#contact" class="nav-cta" style="text-align:center;display:block;border-radius:6px;padding:12px;">1re séance offerte</a>
+  <a href="#contact" class="nav-cta nav-mobile-cta">1re séance offerte</a>
 </div>
 
 <!-- ==================== HERO ==================== -->
@@ -1977,7 +1998,7 @@
           <textarea id="message" name="message" placeholder="Je souhaite réserver une séance découverte..." required></textarea>
         </div>
         <button type="submit" class="contact-submit">Réserver ma séance gratuite</button>
-        <span class="micro-copy" style="text-align:center;display:block;margin-top:8px;">Réponse sous 24h · Sans engagement</span>
+        <span class="micro-copy" style="text-align:center">Réponse sous 24h · Sans engagement</span>
       </form>
       <div class="form-success" id="formSuccess">
         <div class="form-success-icon">
@@ -2046,7 +2067,7 @@
     </div>
   </div>
   <div class="footer-legal">
-    &copy; 2026 Cabinet paramédical Samuel Queniart — Tous droits réservés · <a href="#" id="openLegal" style="color:rgba(255,255,255,0.5);text-decoration:underline;">Mentions légales</a>
+    &copy; 2026 Cabinet paramédical Samuel Queniart — Tous droits réservés · <a href="#" id="openLegal" class="footer-legal-link">Mentions légales</a>
   </div>
 </footer>
 
@@ -2062,8 +2083,8 @@
       Ce site utilise des cookies essentiels au fonctionnement du formulaire de contact et à l'affichage de la carte Google Maps. Aucune donnée n'est utilisée à des fins publicitaires. <a href="#" id="openLegalFromBanner">En savoir plus</a>
     </p>
     <div class="gdpr-actions">
-      <button class="gdpr-accept" id="gdprAccept">Accepter</button>
-      <button class="gdpr-refuse" id="gdprRefuse">Refuser</button>
+      <button type="button" class="gdpr-accept" id="gdprAccept">Accepter</button>
+      <button type="button" class="gdpr-refuse" id="gdprRefuse">Refuser</button>
     </div>
   </div>
 </div>
@@ -2071,7 +2092,7 @@
 <!-- ==================== MENTIONS LEGALES MODAL ==================== -->
 <div class="legal-modal" id="legalModal">
   <div class="legal-modal-content">
-    <button class="legal-modal-close" id="closeLegal" aria-label="Fermer">
+    <button type="button" class="legal-modal-close" id="closeLegal" aria-label="Fermer">
       <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <h2>Mentions légales</h2>
@@ -2171,58 +2192,109 @@
     });
   });
 
-  // GDPR banner
+  // GDPR banner (with localStorage try-catch for private browsing)
   const gdprBanner = document.getElementById('gdprBanner');
-  if (!localStorage.getItem('gdpr-consent')) {
+  try {
+    if (!localStorage.getItem('gdpr-consent')) {
+      gdprBanner.classList.add('show');
+    }
+  } catch(e) {
     gdprBanner.classList.add('show');
   }
-  document.getElementById('gdprAccept').addEventListener('click', () => {
-    localStorage.setItem('gdpr-consent', 'accepted');
+  function setGdprConsent(value) {
     gdprBanner.classList.remove('show');
-  });
-  document.getElementById('gdprRefuse').addEventListener('click', () => {
-    localStorage.setItem('gdpr-consent', 'refused');
-    gdprBanner.classList.remove('show');
-  });
+    try { localStorage.setItem('gdpr-consent', value); } catch(e) {}
+  }
+  document.getElementById('gdprAccept').addEventListener('click', () => setGdprConsent('accepted'));
+  document.getElementById('gdprRefuse').addEventListener('click', () => setGdprConsent('refused'));
 
-  // Legal modal
+  // Legal modal with focus trap + ESC close
   const legalModal = document.getElementById('legalModal');
+  const legalClose = document.getElementById('closeLegal');
+  let lastFocusedElement = null;
+
   function openLegal(e) {
     e.preventDefault();
+    lastFocusedElement = document.activeElement;
     legalModal.classList.add('show');
+    legalClose.focus();
   }
+  function closeLegalModal() {
+    legalModal.classList.remove('show');
+    if (lastFocusedElement) lastFocusedElement.focus();
+  }
+
   document.getElementById('openLegal').addEventListener('click', openLegal);
   document.getElementById('openLegalFromBanner').addEventListener('click', openLegal);
-  document.getElementById('closeLegal').addEventListener('click', () => {
-    legalModal.classList.remove('show');
-  });
+  legalClose.addEventListener('click', closeLegalModal);
   legalModal.addEventListener('click', (e) => {
-    if (e.target === legalModal) legalModal.classList.remove('show');
+    if (e.target === legalModal) closeLegalModal();
   });
 
-  // Form submission with success state
+  // ESC to close modal + mobile menu
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (legalModal.classList.contains('show')) closeLegalModal();
+      if (mobileMenu.classList.contains('open')) {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('open');
+      }
+    }
+  });
+
+  // Focus trap inside legal modal
+  legalModal.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab') return;
+    const focusable = legalModal.querySelectorAll('button, a, [tabindex]:not([tabindex="-1"])');
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+
+  // Form submission with error handling + rate-limit
   const form = document.querySelector('.contact-form');
   if (form) {
+    let isSubmitting = false;
+    const submitBtn = form.querySelector('.contact-submit');
+
     form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (isSubmitting) return;
+
       const accessKey = form.querySelector('[name="access_key"]').value;
       if (accessKey === 'VOTRE_CLE_WEB3FORMS') {
-        e.preventDefault();
+        // Demo mode without API key
         form.style.display = 'none';
         document.getElementById('formSuccess').classList.add('show');
         return;
       }
-      e.preventDefault();
+
+      isSubmitting = true;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Envoi en cours...';
+
       fetch(form.action, { method: 'POST', body: new FormData(form) })
         .then(r => r.json())
         .then(data => {
           if (data.success) {
             form.style.display = 'none';
             document.getElementById('formSuccess').classList.add('show');
+          } else {
+            submitBtn.textContent = 'Erreur — Réessayer';
+            isSubmitting = false;
+            submitBtn.disabled = false;
           }
         })
         .catch(() => {
-          form.style.display = 'none';
-          document.getElementById('formSuccess').classList.add('show');
+          submitBtn.textContent = 'Erreur réseau — Réessayer';
+          isSubmitting = false;
+          submitBtn.disabled = false;
         });
     });
   }
