@@ -1974,7 +1974,7 @@
           <span class="praticien-cred">Diplômé d'État</span>
           <span class="praticien-cred">Recherche universitaire</span>
           <span class="praticien-cred">Fournisseur d'équipements cryo</span>
-          <span class="praticien-cred">Cabinet agréé</span>
+          <span class="praticien-cred">Cabinet à Noisiel</span>
           <span class="praticien-cred">Suivi personnalisé</span>
         </div>
       </div>
@@ -2173,14 +2173,12 @@
             <p>Sur rendez-vous</p>
           </div>
         </div>
-        <div class="contact-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2629.1!2d2.6182!3d48.8422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e60e48b1!2s15+Cours+du+Luzard%2C+77186+Noisiel!5e0!3m2!1sfr!2sfr!4v1"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Cabinet paramédical Samuel Queniart — 15 cours du Luzard, Noisiel">
-          </iframe>
+        <div class="contact-map" id="mapContainer"
+          data-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2629.1!2d2.6182!3d48.8422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e60e48b1!2s15+Cours+du+Luzard%2C+77186+Noisiel!5e0!3m2!1sfr!2sfr!4v1">
+          <div id="mapPlaceholder" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;min-height:250px;background:var(--pale);border-radius:12px;text-align:center;padding:24px;">
+            <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">📍 15 cours du Luzard, 77186 Noisiel</p>
+            <a href="https://www.google.com/maps/search/15+Cours+du+Luzard+77186+Noisiel" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600;font-size:13px;">Ouvrir dans Maps ↗</a>
+          </div>
         </div>
       </div>
 
@@ -2222,7 +2220,7 @@
 <div class="gdpr-banner" id="gdprBanner">
   <div class="gdpr-content">
     <p class="gdpr-text">
-      Ce site utilise des cookies essentiels au fonctionnement du formulaire de contact et à l'affichage de la carte Google Maps. Aucune donnée n'est utilisée à des fins publicitaires. <a href="#" id="openLegalFromBanner">En savoir plus</a>
+      Ce site utilise des cookies essentiels au fonctionnement du formulaire de contact. La carte interactive Google Maps peut déposer des cookies tiers. Aucune donnée n'est utilisée à des fins publicitaires. <a href="#" id="openLegalFromBanner">En savoir plus</a>
     </p>
     <div class="gdpr-actions">
       <button type="button" class="gdpr-accept" id="gdprAccept">Accepter</button>
@@ -2243,7 +2241,8 @@
     <p>Cabinet paramédical Samuel Queniart<br>
     15 cours du Luzard, 77186 Noisiel<br>
     Téléphone : 06.08.77.42.86<br>
-    Professionnel de santé — Diplômé d'État<br>
+    Kinésithérapeute-ostéopathe diplômé d'État<br>
+    N° ADELI : [à compléter]<br>
     SIRET : [à compléter]<br>
     Directeur de la publication : Samuel Queniart</p>
 
@@ -2254,12 +2253,12 @@
     <p>L'ensemble du contenu de ce site (textes, images, logos) est la propriété exclusive du Cabinet paramédical Samuel Queniart. Toute reproduction est interdite sans autorisation préalable.</p>
 
     <h3>Protection des données personnelles (RGPD)</h3>
-    <p>Les données collectées via le formulaire de contact (nom, email, téléphone, message) sont uniquement utilisées pour répondre à votre demande de rendez-vous. Elles ne sont ni vendues, ni partagées avec des tiers.</p>
-    <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits, contactez-nous par téléphone ou via le formulaire du site.</p>
-    <p>Le formulaire est traité par le service Web3Forms. La carte est fournie par Google Maps. Aucun cookie publicitaire ou de suivi n'est utilisé.</p>
+    <p>Les données collectées via le formulaire de contact (nom, email, téléphone, message) sont uniquement utilisées pour répondre à votre demande de rendez-vous. Elles ne sont ni vendues, ni partagées avec des tiers. Les données sont conservées pendant 3 ans après votre dernier contact, puis supprimées.</p>
+    <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits, contactez-nous au 06.08.77.42.86 ou via le formulaire de contact du site.</p>
+    <p>Le formulaire est traité par le service Web3Forms. La carte interactive est fournie par Google Maps et peut déposer des cookies tiers (Google). Aucun cookie publicitaire n'est utilisé par le site lui-même.</p>
 
     <h3>Responsabilité</h3>
-    <p>Les informations fournies sur ce site sont à titre indicatif. La cryothérapie ne se substitue pas à un avis médical. Consultez votre médecin en cas de doute sur les contre-indications.</p>
+    <p>Les informations fournies sur ce site sont à titre indicatif. La cryothérapie corps entier est une pratique de bien-être. Elle ne se substitue pas à un avis ou un traitement médical. Consultez votre médecin en cas de doute sur les contre-indications.</p>
   </div>
 </div>
 
@@ -2351,10 +2350,28 @@
   } catch(e) {
     gdprBanner.classList.add('show');
   }
+  function loadMap() {
+    const container = document.getElementById('mapContainer');
+    const src = container.getAttribute('data-map-src');
+    if (src && !container.querySelector('iframe')) {
+      const placeholder = document.getElementById('mapPlaceholder');
+      if (placeholder) placeholder.remove();
+      const iframe = document.createElement('iframe');
+      iframe.src = src;
+      iframe.allowFullscreen = true;
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      iframe.title = 'Cabinet paramédical Samuel Queniart — 15 cours du Luzard, Noisiel';
+      container.appendChild(iframe);
+    }
+  }
   function setGdprConsent(value) {
     gdprBanner.classList.remove('show');
     try { localStorage.setItem('gdpr-consent', value); } catch(e) {}
+    if (value === 'accepted') loadMap();
   }
+  // Load map if already accepted
+  try { if (localStorage.getItem('gdpr-consent') === 'accepted') loadMap(); } catch(e) {}
   document.getElementById('gdprAccept').addEventListener('click', () => setGdprConsent('accepted'));
   document.getElementById('gdprRefuse').addEventListener('click', () => setGdprConsent('refused'));
 
