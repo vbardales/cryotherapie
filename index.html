@@ -504,22 +504,10 @@
      BIENFAITS
      ============================================================ */
   .bienfaits {
-    background: var(--pale);
+    background: linear-gradient(165deg, var(--pale) 0%, #dceef4 40%, #c8e2ee 100%);
     position: relative;
     overflow: hidden;
   }
-  .bienfaits-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-  .bienfaits-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.07;
-  }
-  .bienfaits > .container { position: relative; z-index: 1; }
 
   .bienfaits-grid {
     display: grid;
@@ -538,6 +526,10 @@
     transform: translateY(-6px);
     box-shadow: 0 12px 40px rgba(9,27,41,0.08);
   }
+  .bienfait-card:hover .bienfait-icon {
+    transform: scale(1.15);
+    color: var(--gold);
+  }
   .bienfait-icon {
     font-size: 40px;
     margin-bottom: 16px;
@@ -551,6 +543,7 @@
     color: var(--blue-mid);
     margin-left: auto;
     margin-right: auto;
+    transition: transform 0.3s, color 0.3s;
   }
   .bienfait-icon svg {
     width: 32px;
@@ -594,9 +587,12 @@
     background: var(--pale);
     border-radius: 12px;
     padding: 24px;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
-  .exp-card:hover { transform: translateX(4px); }
+  .exp-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(9,27,41,0.06);
+  }
   .exp-icon {
     font-size: 32px;
     flex-shrink: 0;
@@ -1017,13 +1013,13 @@
   .floating-cta {
     display: none;
     position: fixed;
-    bottom: 24px;
-    right: 24px;
+    bottom: 20px;
+    right: 16px;
     z-index: 997;
     background: linear-gradient(135deg, var(--gold), var(--gold-bright));
     color: var(--dark);
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
@@ -1033,8 +1029,8 @@
     animation: floatingPulse 2s infinite;
   }
   .floating-cta svg {
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
     stroke: var(--dark);
     stroke-width: 2;
     stroke-linecap: round;
@@ -1045,13 +1041,13 @@
 
   .back-to-top {
     position: fixed;
-    bottom: 24px;
-    left: 24px;
+    bottom: 20px;
+    left: 16px;
     z-index: 997;
     background: var(--dark);
     color: var(--white);
-    width: 44px;
-    height: 44px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1581,7 +1577,15 @@
     .praticien-content { flex-direction: column; text-align: center; }
     .praticien-photo { width: 150px; height: 150px; }
     .praticien-credentials { justify-content: center; }
-    .trust-badges { gap: 16px; }
+    .trust-badges {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 20px;
+    }
+    .trust-badge { font-size: 11px; gap: 8px; }
+    .trust-badge-icon { width: 30px; height: 30px; }
+    .trust-badge-icon svg { width: 15px; height: 15px; }
 
     .hero h1 { font-size: 36px; }
     .hero-subtitle { font-size: 15px; }
@@ -1692,7 +1696,6 @@
 
 <!-- ==================== BIENFAITS ==================== -->
 <section class="bienfaits" id="bienfaits">
-  <div class="bienfaits-bg"><img src="image4.webp" alt="" aria-hidden="true" loading="lazy"></div>
   <div class="container">
     <div class="section-header reveal">
       <div class="section-label">Les bienfaits</div>
@@ -1787,7 +1790,7 @@
       <div class="step reveal">
         <div class="step-number">3</div>
         <h3>Profitez</h3>
-        <p>2 à 4 minutes entre -110°C et -160°C, guidé par un professionnel. Objectif : légèreté et énergie.</p>
+        <p>2 à 4 minutes de froid sec progressif, guidé par un professionnel. Objectif : légèreté et énergie.</p>
       </div>
     </div>
     <div class="section-cta reveal">
@@ -1953,8 +1956,8 @@
   <div class="container">
     <div class="praticien-content reveal">
       <div class="praticien-photo">
-        <div class="praticien-photo-placeholder">
-          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <div class="praticien-photo-placeholder" style="font-size:48px;font-weight:800;color:var(--gold);letter-spacing:2px;font-family:'Playfair Display',serif;">
+          SQ
         </div>
       </div>
       <div class="praticien-info">
