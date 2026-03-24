@@ -593,6 +593,16 @@
     transform: translateX(4px);
     box-shadow: 0 4px 20px rgba(9,27,41,0.06);
   }
+  .exp-group-title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin: 40px 0 16px;
+    text-align: center;
+  }
+  .exp-group-title:first-of-type { margin-top: 0; }
   .exp-icon {
     font-size: 32px;
     flex-shrink: 0;
@@ -1764,7 +1774,12 @@
       <a href="#contact">Essayer gratuitement</a>
       <span class="micro-copy">Sans engagement · Encadré par un professionnel</span>
     </div>
-    <p class="reveal" style="text-align:center;font-size:11px;color:var(--text-subtle);margin-top:24px;line-height:1.5;max-width:600px;margin-left:auto;margin-right:auto;">La cryothérapie corps entier est une pratique de bien-être. Elle ne se substitue pas à un avis ou un traitement médical. Consultez votre médecin en cas de doute.</p>
+    <div class="profiles-bar reveal" style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:32px;">
+      <span style="background:var(--white);padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;color:var(--blue);">🏃 Sportifs</span>
+      <span style="background:var(--white);padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;color:var(--blue);">💆 Bien-être & stress</span>
+      <span style="background:var(--white);padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;color:var(--blue);">🩹 Douleurs & récupération</span>
+    </div>
+    <p class="reveal" style="text-align:center;font-size:11px;color:var(--text-subtle);margin-top:24px;line-height:1.5;max-width:600px;margin-left:auto;margin-right:auto;">Pratique de bien-être — ne se substitue pas à un avis médical.</p>
   </div>
 </section>
 
@@ -1809,6 +1824,7 @@
       <p class="section-subtitle">Tout est pensé pour que vous profitiez pleinement de votre séance</p>
     </div>
 
+    <h3 class="exp-group-title reveal">Votre confort</h3>
     <div class="experience-grid stagger">
       <div class="exp-card reveal">
         <span class="exp-icon">
@@ -1834,7 +1850,7 @@
         </span>
         <div>
           <h3>Progressif et adapté</h3>
-          <p>L'exposition est brève et ajustée à votre ressenti. Aucun choc, que du bien.</p>
+          <p>L'exposition est brève et ajustée à votre ressenti. Vous gardez le contrôle.</p>
         </div>
       </div>
       <div class="exp-card reveal">
@@ -1855,27 +1871,22 @@
           <p>Haut-parleurs intégrés, LED d'ambiance — mettez votre musique et bougez librement dans une vraie pièce.</p>
         </div>
       </div>
+    </div>
+
+    <h3 class="exp-group-title reveal">Notre technologie</h3>
+    <div class="experience-grid stagger">
       <div class="exp-card reveal">
         <span class="exp-icon">
           <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </span>
         <div>
           <h3>Grande vitre panoramique</h3>
-          <p>Visibilité totale grâce à la grande paroi vitrée. Vous voyez l'extérieur, le praticien vous surveille en continu et peut stopper la séance à tout moment.</p>
+          <p>Visibilité totale grâce à la grande paroi vitrée. Le praticien vous surveille en continu et peut stopper la séance à tout moment.</p>
         </div>
       </div>
       <div class="exp-card reveal">
         <span class="exp-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        </span>
-        <div>
-          <h3>Résultats immédiats</h3>
-          <p>Dès la première séance : légèreté, apaisement et regain d'énergie.</p>
-        </div>
-      </div>
-      <div class="exp-card reveal">
-        <span class="exp-icon">
-          <svg viewBox="0 0 24 24"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </span>
         <div>
           <h3>100% électrique, sans azote</h3>
@@ -1889,6 +1900,15 @@
         <div>
           <h3>Caméra thermique</h3>
           <p>Votre température corporelle est suivie en temps réel sur écran. Précision et sécurité maximales.</p>
+        </div>
+      </div>
+      <div class="exp-card reveal">
+        <span class="exp-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </span>
+        <div>
+          <h3>Ressenti dès la 1re séance</h3>
+          <p>La plupart des clients rapportent une sensation de légèreté et de bien-être en sortant.</p>
         </div>
       </div>
     </div>
@@ -1982,7 +2002,7 @@
     <div class="section-header reveal">
       <div class="section-label">Nos formules</div>
       <h2 class="section-title">Des formules simples, sans surprise</h2>
-      <p class="section-subtitle">Dès 15 € la séance — jusqu'à 3× moins cher qu'ailleurs</p>
+      <p class="section-subtitle">Dès 15 € la séance — un tarif accessible pour tous</p>
     </div>
     <div class="tarifs-grid stagger">
       <div class="tarif-card tarif-decouverte reveal">
@@ -2013,7 +2033,7 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-label">Questions fréquentes</div>
-      <h2 class="section-title">Tout ce que vous devez savoir</h2>
+      <h2 class="section-title">Vos questions, nos réponses</h2>
     </div>
     <div class="faq-list">
       <div class="faq-item reveal">
@@ -2089,6 +2109,7 @@
         </div>
       </div>
     </div>
+    <p class="reveal" style="text-align:center;font-size:11px;color:var(--text-subtle);margin-top:32px;line-height:1.5;max-width:600px;margin-left:auto;margin-right:auto;">La cryothérapie corps entier est une pratique de bien-être. Elle ne se substitue pas à un avis ou un traitement médical. Consultez votre médecin en cas de doute.</p>
   </div>
 </section>
 
@@ -2097,8 +2118,8 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-label">Contact</div>
-      <h2 class="section-title">Votre première séance vous attend</h2>
-      <p class="section-subtitle">Réservez en 30 secondes, sans engagement</p>
+      <h2 class="section-title">Prêt(e) à essayer ?</h2>
+      <p class="section-subtitle">Réservez votre séance découverte gratuite — on vous rappelle sous 24h</p>
     </div>
     <div class="contact-grid">
 
